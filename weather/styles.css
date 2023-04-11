@@ -1,0 +1,138 @@
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  /* color: #FFFFFF; */
+}
+
+#container {
+  height: 100vh;
+  width: 100%;
+}
+#container #background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -100;
+  top: 0;
+}
+#container form {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: right;
+}
+#container form input {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 7px 15px;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 30px;
+}
+#container form button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  color: #333333;
+  margin: 0;
+  padding: 7px 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 30px;
+}
+#container #info {
+  padding: 100px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#container #info #temp {
+  font-size: 80px;
+  margin: 10px 0;
+}
+#container #info #loc {
+  margin-top: 100px;
+}
+#container #info #F, #container #info #C {
+  display: inline-block;
+  cursor: pointer;
+}
+#container #info #F.disabled, #container #info #C.disabled {
+  color: rgba(255, 255, 255, 0.5);
+}
+#container #info #F {
+  border-right: 1px solid #FFFFFF;
+  padding-right: 15px;
+  margin-right: 10px;
+}
+/* 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+ @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
+ html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+} 
+
+/* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+} 
+
+
+/*# sourceMappingURL=styles.css.map */
