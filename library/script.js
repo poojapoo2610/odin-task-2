@@ -24,14 +24,12 @@ form.addEventListener('submit', (e) => {
   }
 })
 
-
-
 // document.getElementById("form").addEventListener("submit", addBookToLibrary);
 
 var myLibrary = [];
 let newBook;
 
-function addBookToLibrary() {
+function addBookToLibrary(event) {
   event.preventDefault();
   popUp("close");
   let obj = {
@@ -39,9 +37,8 @@ function addBookToLibrary() {
     title: document.getElementById("title").value,
     author: document.getElementById("author").value,
     pages: document.getElementById("pages").value,
-    read: document.querySelector("#read:checked")
-      ? document.querySelector("#read:checked").value
-      : false,
+    read: document.querySelector("#read:checked").value
+    
   };
   myLibrary.push(obj);
   localStorage.setItem("myLibrary", JSON.stringify(myLibrary));

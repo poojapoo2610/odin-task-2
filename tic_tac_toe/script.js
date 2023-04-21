@@ -1,43 +1,10 @@
-// to display the game status message
-const displayController = (() => {
-    const renderMessage = (message) => {
-        document.querySelector("#message").innerHTML = message
-    }
-    return {
-        renderMessage
-    }
-})();
+
+const startButton = document.querySelector("#start-button");
+startButton.addEventListener("click", () => {
+    Game.start();
+})
 
 
-const Gameboard = (() => {
-    let gameboard = ["", "", "", "", "", "", "", "", ""]
-
-    const render = () => {
-        let boardHTML = "";
-        gameboard.forEach((square, index) => {
-            boardHTML += `<div class="square" id="square-${index}">${square} </div>`
-        })
-        document.querySelector("#gameboard").innerHTML = boardHTML;
-        const squares = document.querySelectorAll(".square");
-        squares.forEach((square) => {
-            square.addEventListener("click", Game.handleClick)
-        })
-    }
-
-    const update = (index, value) => {
-        gameboard[index] = value
-        render()
-    }
-
-    const getGameboard = () => gameboard;
-
-    return {
-        render,
-        update,
-        getGameboard
-    }
-
-})();
 
 const Game = (() => {
     let players = [];
@@ -70,7 +37,7 @@ const Game = (() => {
         }
         let index = parseInt(event.target.id.split('-')[1])
         // gameboard = ["X","","","","","",""."",""]
-        if (Gameboard.getGameboard()[index] !== "") // if index value is available then return or else continue
+        if (Gameboard.getGameboard()[index] !== "") 
             return;
 
         Gameboard.update(index, players[currentPlayerIndex].mark)
@@ -104,6 +71,36 @@ const Game = (() => {
 
 })();
 
+const Gameboard = (() => {
+    let gameboard = ["", "", "", "", "", "", "", "", ""]
+
+    const render = () => {
+        let boardHTML = "";
+        gameboard.forEach((square, index) => {
+            boardHTML += `<div class="square" id="square-${index}">${square} </div>`
+        })
+        document.querySelector("#gameboard").innerHTML = boardHTML;
+        const squares = document.querySelectorAll(".square");
+        squares.forEach((square) => {
+            square.addEventListener("click", Game.handleClick)
+        })
+    }
+
+    const update = (index, value) => {
+        gameboard[index] = value
+        render()
+    }
+
+    const getGameboard = () => gameboard;
+
+    return {
+        render,
+        update,
+        getGameboard
+    }
+
+})();
+
 const checkForWin = (board) => {
     const winningCombinations = [
         [0, 1, 2],
@@ -126,7 +123,7 @@ const checkForWin = (board) => {
 }
 
 const checkForTie = (board) => {
-    console.log(board.every);
+    // console.log(board.every);
     return board.every(cell => cell !== "")
 }
 
@@ -135,8 +132,13 @@ restartButton.addEventListener("click", () => {
     Game.restart()
 })
 
-// 1st execution of the script
-const startButton = document.querySelector("#start-button");
-startButton.addEventListener("click", () => {
-    Game.start();
-})
+
+
+const displayController = (() => {
+    const renderMessage = (message) => {
+        document.querySelector("#message").innerHTML = message
+    }
+    return {
+        renderMessage
+    }
+})();

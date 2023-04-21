@@ -9,7 +9,7 @@ let tempType = 'F';
 async function getWeather(location) {
     const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=dff399d6b771362d56ab860c2e3a3bfe', { mode: 'cors' });
     const weatherData = await response.json();
-    console.log(weatherData);
+    // console.log(weatherData);
 
     const weatherTemp = weatherData.main.temp;
     temperature = weatherTemp;
